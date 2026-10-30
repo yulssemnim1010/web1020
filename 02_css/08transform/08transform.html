@@ -17,6 +17,7 @@
       background: #ccc;
       position: relative;
       margin: 400px auto;
+      perspective: 700px;
     }
 
     .con .card {
@@ -26,9 +27,13 @@
       left: 0;
       top: 0;
       transition: .6s;
+      transform-origin: top center;
+      transform-style: preserve-3d;
     }
 
-    .con:hover .card {}
+    .con:hover .card {
+      transform: rotateX(180deg);
+    }
 
     .face {
       width: 100%;
@@ -36,6 +41,7 @@
       position: absolute;
       left: 0;
       top: 0;
+      backface-visibility: hidden;
     }
 
     .face img {
@@ -43,7 +49,9 @@
       object-fit: cover;
     }
 
-    .back {}
+    .back {
+      transform: rotateX(180deg);
+    }
   </style>
 </head>
 
